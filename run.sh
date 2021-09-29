@@ -4,7 +4,7 @@ set -e
 
 [[ $# -ne 1 ]] && echo "duration(in seconds) is missing" && exit 1
 
-rootdir=$(dirname $0)
+rootdir=$(realpath $(dirname $0))
 
 cd $rootdir
 
