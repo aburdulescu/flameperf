@@ -33,6 +33,8 @@ sudo perf record -F 99 -a --call-graph dwarf sleep $1
 
 perf script | ./../FlameGraph/stackcollapse-perf.pl > perf.stacks
 
+perf script --header > perf.flamescope
+
 ./../FlameGraph/flamegraph.pl --inverted perf.stacks > perf.svg
 
 firefox perf.svg
